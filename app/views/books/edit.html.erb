@@ -1,0 +1,22 @@
+<div>
+  <p class="notice"><%= flash[:notice]%></p>
+</div>
+<h2>Editing book</h2>
+<%= form_with model: @book do |f|%>
+    <% @book.errors.full_messages.each do |msg|%>
+      <div class="editerror">error<br><%= msg %></div>
+    <% end %>
+  <div class="field">
+    <%= f.label :title_lable, "Title"%>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title_lable, "Body"%>
+    <%= f.text_area :body %>
+  </div>
+
+  <%= f.submit "Update Book" %>
+<% end %>
+<%= link_to 'Show', "/books/#{@book.id}"%>
+<%= link_to 'Back', '/books'%>

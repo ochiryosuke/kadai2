@@ -1,0 +1,16 @@
+<div>
+  <p class="notice"><%= flash[:notice]%></p>
+</div>
+
+<p><%= @title_error %></p>
+<div class="field">
+  <p><strong>Title: </strong><%= @book.title %></p>
+</div>
+
+<p><%= @body_error %></p>
+<div class="field">
+  <p><strong>Body: </strong><%= @book.body %></p>
+</div>
+
+<%= link_to 'Edit', "/books/#{@book.id}/edit"%>
+<%= link_to 'Back', '/books'%>
